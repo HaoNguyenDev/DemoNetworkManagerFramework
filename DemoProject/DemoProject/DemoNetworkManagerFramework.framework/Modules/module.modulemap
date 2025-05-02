@@ -1,0 +1,6 @@
+framework module DemoNetworkManagerFramework {
+  umbrella header "DemoNetworkManagerFramework.h"
+  export *
+
+  module * { export * }
+}
