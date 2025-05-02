@@ -1,5 +1,6 @@
 # DemoNetworkManagerFramework
 How to use framework:
+
 import DemoNetworkManagerFramework
 then you can use NetworkManager method
 func fetchData<T>( endpoint: any Endpoint, responseType: T.Type ) async throws -> T where T : Decodable
