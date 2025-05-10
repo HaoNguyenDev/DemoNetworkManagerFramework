@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+import SDWebImage
 
 struct UserItemView: View {
     var user: User
@@ -31,15 +33,32 @@ struct UserItemView: View {
 extension UserItemView {
     private var avatarView: some View {
         Group {
-            AsyncImage(url: URL(string: user.avatarUrl ?? ""), content: { returnImage in
-                returnImage
-                    .resizable()
-                    .scaledToFit()
-            }, placeholder: {
-                Image("man-user-circle-icon")
-                    .resizable()
-                    .scaledToFit()
-            })
+//            WebImage(url: URL(string: user.avatarUrl ?? "")) { image in
+//                image
+//                    .resizable()
+//                    .scaledToFit()
+//            } placeholder: {
+//                Image("man-user-circle-icon")
+//                    .resizable()
+//                    .scaledToFit()
+//            }
+            
+            AsyncImage(url: URL(string: user.avatarUrl ?? "")) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                case .failure, .empty:
+                    Image(systemName: "man-user-circle-icon")
+                        .resizable()
+                        .scaledToFit()
+                @unknown default:
+                    Image(systemName: "man-user-circle-icon")
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
         }
         .frame(maxWidth: 100, maxHeight: 100)
         .background(Color.gray.opacity(0.1))

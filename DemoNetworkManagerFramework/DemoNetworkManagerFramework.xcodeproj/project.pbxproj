@@ -6,30 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DABF4AF22DCF578300554C30 /* DemoNetworkManagerFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = DABF4AED2DCF578300554C30 /* DemoNetworkManagerFramework.docc */; };
+		DABF4AF32DCF578300554C30 /* NetWorkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF4AEE2DCF578300554C30 /* NetWorkError.swift */; };
+		DABF4AF42DCF578300554C30 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF4AEF2DCF578300554C30 /* NetworkManager.swift */; };
+		DABF4AF52DCF578300554C30 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF4AF02DCF578300554C30 /* NetworkProtocols.swift */; };
+		DABF4AF62DCF578300554C30 /* DemoNetworkManagerFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = DABF4AEC2DCF578300554C30 /* DemoNetworkManagerFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DABF4AF82DCF579800554C30 /* NetworkingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF4AF72DCF579800554C30 /* NetworkingDemo.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DA0CD9C82DC4DF780059D210 /* DemoNetworkManagerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DemoNetworkManagerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DABF4AEC2DCF578300554C30 /* DemoNetworkManagerFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNetworkManagerFramework.h; sourceTree = "<group>"; };
+		DABF4AED2DCF578300554C30 /* DemoNetworkManagerFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DemoNetworkManagerFramework.docc; sourceTree = "<group>"; };
+		DABF4AEE2DCF578300554C30 /* NetWorkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkError.swift; sourceTree = "<group>"; };
+		DABF4AEF2DCF578300554C30 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DABF4AF02DCF578300554C30 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
+		DABF4AF72DCF579800554C30 /* NetworkingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		DA0CD9CF2DC4DF780059D210 /* Exceptions for "DemoNetworkManagerFramework" folder in "DemoNetworkManagerFramework" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			publicHeaders = (
-				DemoNetworkManagerFramework.h,
-			);
-			target = DA0CD9C72DC4DF780059D210 /* DemoNetworkManagerFramework */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		DA0CD9CA2DC4DF780059D210 /* DemoNetworkManagerFramework */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				DA0CD9CF2DC4DF780059D210 /* Exceptions for "DemoNetworkManagerFramework" folder in "DemoNetworkManagerFramework" target */,
-			);
-			path = DemoNetworkManagerFramework;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DA0CD9C52DC4DF780059D210 /* Frameworks */ = {
@@ -45,7 +39,7 @@
 		DA0CD9BE2DC4DF780059D210 = {
 			isa = PBXGroup;
 			children = (
-				DA0CD9CA2DC4DF780059D210 /* DemoNetworkManagerFramework */,
+				DABF4AF12DCF578300554C30 /* DemoNetworkManagerFramework */,
 				DA0CD9C92DC4DF780059D210 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +52,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DABF4AF12DCF578300554C30 /* DemoNetworkManagerFramework */ = {
+			isa = PBXGroup;
+			children = (
+				DABF4AEC2DCF578300554C30 /* DemoNetworkManagerFramework.h */,
+				DABF4AED2DCF578300554C30 /* DemoNetworkManagerFramework.docc */,
+				DABF4AEE2DCF578300554C30 /* NetWorkError.swift */,
+				DABF4AEF2DCF578300554C30 /* NetworkManager.swift */,
+				DABF4AF02DCF578300554C30 /* NetworkProtocols.swift */,
+				DABF4AF72DCF579800554C30 /* NetworkingDemo.swift */,
+			);
+			path = DemoNetworkManagerFramework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -65,6 +72,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABF4AF62DCF578300554C30 /* DemoNetworkManagerFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +91,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				DA0CD9CA2DC4DF780059D210 /* DemoNetworkManagerFramework */,
 			);
 			name = DemoNetworkManagerFramework;
 			packageProductDependencies = (
@@ -142,6 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABF4AF22DCF578300554C30 /* DemoNetworkManagerFramework.docc in Sources */,
+				DABF4AF32DCF578300554C30 /* NetWorkError.swift in Sources */,
+				DABF4AF42DCF578300554C30 /* NetworkManager.swift in Sources */,
+				DABF4AF52DCF578300554C30 /* NetworkProtocols.swift in Sources */,
+				DABF4AF82DCF579800554C30 /* NetworkingDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
