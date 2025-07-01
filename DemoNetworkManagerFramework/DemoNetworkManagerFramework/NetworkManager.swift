@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 // MARK: - NetworkManager
 public class NetworkManager: NetworkService {
+    
     private let session: URLSession
     
     public init(session: URLSession = .shared) {
@@ -20,19 +22,98 @@ public class NetworkManager: NetworkService {
         let (data, response) = try await session.data(for: urlRequest)
         
         guard let httpResponse = response as? HTTPURLResponse else {
-            throw NetWorkError.invalidResponse(statusCode: 0)
+            throw NetworkError.invalidResponse(statusCode: 0)
         }
         
         switch httpResponse.statusCode {
         case 200..<300:
             return try decodeData(data, to: responseType)
         case 400..<500:
-            throw NetWorkError.clientError(statusCode: httpResponse.statusCode)
+            throw NetworkError.clientError(statusCode: httpResponse.statusCode)
         case 500..<600:
-            throw NetWorkError.serverError(statusCode: httpResponse.statusCode)
+            throw NetworkError.serverError(statusCode: httpResponse.statusCode)
         default:
-            throw NetWorkError.unknownError(statusCode: httpResponse.statusCode)
+            throw NetworkError.unknownError(statusCode: httpResponse.statusCode)
         }
+    }
+    
+    public func fetchData<T: Decodable>(endpoint: Endpoint, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+        let urlRequest: URLRequest
+        do {
+            urlRequest = try createURLRequest(from: endpoint)
+        } catch {
+            completion(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+        session.dataTask(with: urlRequest) { data, response, error in
+            if error is URLError {
+                completion(.failure(NetworkError.invalidURL))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(NetworkError.invalidResponse(statusCode: 0)))
+                return
+            }
+            
+            switch httpResponse.statusCode {
+            case 200..<300:
+                guard let data = data else {
+                    completion(.failure(NetworkError.invalidResponse(statusCode: httpResponse.statusCode)))
+                    return
+                }
+                do {
+                    let decoded = try self.decodeData(data, to: T.self)
+                    completion(.success(decoded))
+                } catch {
+                    completion(.failure(NetworkError.decodingError(error: error)))
+                }
+            case 400..<500:
+                completion(.failure(NetworkError.clientError(statusCode: httpResponse.statusCode)))
+            case 500..<600:
+                completion(.failure(NetworkError.serverError(statusCode: httpResponse.statusCode)))
+            default:
+                completion(.failure(NetworkError.unknownError(statusCode: httpResponse.statusCode)))
+            }
+        }.resume()
+    }
+    
+    public func fetchData<T: Decodable>(endpoint: Endpoint, responseType: T.Type) -> AnyPublisher<T, Error> {
+        let urlRequest: URLRequest
+        do {
+            urlRequest = try createURLRequest(from: endpoint)
+        } catch {
+            return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
+        }
+        
+        return session.dataTaskPublisher(for: urlRequest)
+            .tryMap { data, response in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw NetworkError.invalidResponse(statusCode: 0)
+                }
+                switch httpResponse.statusCode {
+                case 200..<300:
+                    return data
+                case 400..<500:
+                    throw NetworkError.clientError(statusCode: httpResponse.statusCode)
+                case 500..<600:
+                    throw NetworkError.serverError(statusCode: httpResponse.statusCode)
+                default:
+                    throw NetworkError.unknownError(statusCode: httpResponse.statusCode)
+                }
+            }
+            .decode(type: T.self, decoder: JSONDecoder())
+            .mapError { error -> NetworkError in
+                switch error {
+                case is DecodingError:
+                    return NetworkError.decodingError(error: error)
+                default:
+                    return NetworkError.networkError(error: error)
+                }
+            }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
     
     private func createURLRequest(from endpoint: Endpoint) throws -> URLRequest {
@@ -42,7 +123,7 @@ public class NetworkManager: NetworkService {
         }
         
         guard let url = components?.url else {
-            throw NetWorkError.invalidURL
+            throw NetworkError.invalidURL
         }
         
         var request = URLRequest(url: url)
@@ -59,7 +140,7 @@ public class NetworkManager: NetworkService {
             #endif
             return result
         } catch {
-            throw NetWorkError.decodingError(error: error)
+            throw NetworkError.decodingError(error: error)
         }
     }
 }

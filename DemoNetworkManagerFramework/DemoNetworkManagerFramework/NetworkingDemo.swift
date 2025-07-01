@@ -118,7 +118,7 @@ class NetworkingManager: NetworkingManagerProtocol {
                 return data
             }
             .decode(type: T.self, decoder: JSONDecoder())
-            .mapError { error in
+            .mapError { error -> NetworkingError in
                 switch error {
                 case is URLError:
                     return NetworkingError.networkError(error.localizedDescription)

@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Custom NetworkError
-public enum NetWorkError: Error {
+public enum NetworkError: Error {
     case invalidURL
     case invalidData
     case invalidResponse(statusCode: Int)

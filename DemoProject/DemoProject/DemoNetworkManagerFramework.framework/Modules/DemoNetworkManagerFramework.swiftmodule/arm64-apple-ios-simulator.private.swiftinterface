@@ -1,13 +1,14 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target arm64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature OpaqueTypeErasure -enable-bare-slash-regex -module-name DemoNetworkManagerFramework
+import Combine
 @_exported import DemoNetworkManagerFramework
 import Foundation
 import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum NetWorkError : Swift.Error {
+public enum NetworkError : Swift.Error {
   case invalidURL
   case invalidData
   case invalidResponse(statusCode: Swift.Int)
@@ -23,6 +24,8 @@ public enum NetWorkError : Swift.Error {
 public class NetworkManager : DemoNetworkManagerFramework.NetworkService {
   public init(session: Foundation.URLSession = .shared)
   public func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) async throws -> T where T : Swift.Decodable
+  public func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type, completion: @escaping (Swift.Result<T, any Swift.Error>) -> Swift.Void) where T : Swift.Decodable
+  public func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) -> Combine.AnyPublisher<T, any Swift.Error> where T : Swift.Decodable
   @objc deinit
 }
 public enum HTTPMethod : Swift.String {
@@ -45,6 +48,8 @@ public protocol Endpoint {
 }
 public protocol NetworkService {
   func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) async throws -> T where T : Swift.Decodable
+  func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) -> Combine.AnyPublisher<T, any Swift.Error> where T : Swift.Decodable
+  func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type, completion: @escaping (Swift.Result<T, any Swift.Error>) -> Swift.Void) where T : Swift.Decodable
 }
 extension DemoNetworkManagerFramework.HTTPMethod : Swift.Equatable {}
 extension DemoNetworkManagerFramework.HTTPMethod : Swift.Hashable {}

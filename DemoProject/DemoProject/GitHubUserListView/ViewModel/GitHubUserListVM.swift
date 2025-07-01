@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import DemoNetworkManagerFramework
 
 // MARK: - Support for Loadmore
 struct PaginationConfig {
@@ -31,6 +32,8 @@ class GitHubUserListVM: ObservableObject, GitHubUserListVMProtocol {
     @Published var error: Error?
     private let networkService: GitHubServiceProtocol
     private var paginationConfig: PaginationConfig
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     init(networkService: GitHubServiceProtocol = GitHubNetworkService(),
          paginationConfig: PaginationConfig = PaginationConfig(perPage: 20, since: 0)) {
@@ -57,17 +60,61 @@ extension GitHubUserListVM {
     
     func loadMoreUser() async {
         await performWithLoading {
-            let newUsers = try await networkService.fetchUsers(perPage: paginationConfig.perPage,
-                                                               since: paginationConfig.since)
-            appendUsers(newUsers)
-            updatePagination(from: newUsers)
+            do {
+                let newUsers = try await networkService.fetchUsers(perPage: paginationConfig.perPage,
+                                                                   since: paginationConfig.since)
+                appendUsers(newUsers)
+                updatePagination(from: newUsers)
+            } catch {
+                self.error = error
+            }
         }
+    }
+    
+    func fetchUser2() {
+        networkService.fetchUsersWithCombine(perPage: paginationConfig.perPage, since: paginationConfig.since)
+            .sink(receiveCompletion: { [weak self] completion in
+                if case .failure(let error) = completion {
+                    self?.error = error
+                }
+            }) { [weak self] newUsers in
+                self?.updateUsers(newUsers)
+                self?.updatePagination(from: newUsers)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func loadMoreUser2() {
+        networkService.fetchUsersWithCombine(perPage: paginationConfig.perPage, since: paginationConfig.since)
+            .sink(receiveCompletion: { [weak self] completion in
+                if case .failure(let error) = completion {
+                    self?.error = error
+                }
+            }) { [weak self] newUsers in
+                self?.appendUsers(newUsers)
+                self?.updatePagination(from: newUsers)
+            }
+            .store(in: &cancellables)
     }
     
     func updatePagination(from users: [User]) {
         if let lastUserId = users.last?.id {
             paginationConfig.since = lastUserId
         }
+    }
+    
+    func loadMoreDataIfNeed(currentUser: User) {
+        guard let lastUser = users.last, currentUser == lastUser,
+        !isLoading,
+        !users.isEmpty else { return }
+        #if DEBUG
+        print(">>> Load more data from user withID \(String(describing: currentUser.id))")
+        #endif
+        /* load more if scroll to the last user */
+//        Task {
+//            await loadMoreUser()
+//        }
+        loadMoreUser2()
     }
 }
 
