@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature OpaqueTypeErasure -enable-bare-slash-regex -module-name DemoNetworkManagerFramework
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name DemoNetworkManagerFramework
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
 import Combine
 @_exported import DemoNetworkManagerFramework
 import Foundation
@@ -8,25 +9,28 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum NetworkError : Swift.Error {
+public enum NetworkError : Swift.Error, Foundation.LocalizedError, Swift.Equatable {
   case invalidURL
   case invalidData
-  case invalidResponse(statusCode: Swift.Int)
-  case decodingError(error: any Swift.Error)
   case networkError(error: any Swift.Error)
+  case invalidResponse(statusCode: Swift.Int)
   case clientError(statusCode: Swift.Int)
   case serverError(statusCode: Swift.Int)
+  case decodingError(error: any Swift.Error)
   case unknownError(statusCode: Swift.Int)
-  public var errorDescription: Swift.String {
+  public var errorDescription: Swift.String? {
     get
   }
+  public static func == (lhs: DemoNetworkManagerFramework.NetworkError, rhs: DemoNetworkManagerFramework.NetworkError) -> Swift.Bool
 }
-public class NetworkManager : DemoNetworkManagerFramework.NetworkService {
+public class NetworkManager : DemoNetworkManagerFramework.NetworkServiceProtocol {
   public init(session: Foundation.URLSession = .shared)
-  public func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) async throws -> T where T : Swift.Decodable
-  public func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type, completion: @escaping (Swift.Result<T, any Swift.Error>) -> Swift.Void) where T : Swift.Decodable
-  public func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) -> Combine.AnyPublisher<T, any Swift.Error> where T : Swift.Decodable
   @objc deinit
+}
+extension DemoNetworkManagerFramework.NetworkManager {
+  public func requestAsync<T>(endpoint: any DemoNetworkManagerFramework.Endpoint) async throws -> T where T : Swift.Decodable
+  public func requestCallback<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, completion: @escaping (Swift.Result<T, any Swift.Error>) -> Swift.Void) where T : Swift.Decodable
+  public func requestPublisher<T>(endpoint: any DemoNetworkManagerFramework.Endpoint) -> Combine.AnyPublisher<T, any Swift.Error> where T : Swift.Decodable
 }
 public enum HTTPMethod : Swift.String {
   case get
@@ -43,13 +47,14 @@ public protocol Endpoint {
   var baseURL: Swift.String { get }
   var path: Swift.String { get }
   var method: DemoNetworkManagerFramework.HTTPMethod { get }
-  var queryParameters: [Swift.String : Swift.String]? { get }
   var headers: [Swift.String : Swift.String]? { get }
+  var queryItems: [Foundation.URLQueryItem]? { get }
+  var body: Foundation.Data? { get }
 }
-public protocol NetworkService {
-  func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) async throws -> T where T : Swift.Decodable
-  func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type) -> Combine.AnyPublisher<T, any Swift.Error> where T : Swift.Decodable
-  func fetchData<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, responseType: T.Type, completion: @escaping (Swift.Result<T, any Swift.Error>) -> Swift.Void) where T : Swift.Decodable
+public protocol NetworkServiceProtocol : AnyObject {
+  func requestAsync<T>(endpoint: any DemoNetworkManagerFramework.Endpoint) async throws -> T where T : Swift.Decodable
+  func requestPublisher<T>(endpoint: any DemoNetworkManagerFramework.Endpoint) -> Combine.AnyPublisher<T, any Swift.Error> where T : Swift.Decodable
+  func requestCallback<T>(endpoint: any DemoNetworkManagerFramework.Endpoint, completion: @escaping (Swift.Result<T, any Swift.Error>) -> Swift.Void) where T : Swift.Decodable
 }
 extension DemoNetworkManagerFramework.HTTPMethod : Swift.Equatable {}
 extension DemoNetworkManagerFramework.HTTPMethod : Swift.Hashable {}
