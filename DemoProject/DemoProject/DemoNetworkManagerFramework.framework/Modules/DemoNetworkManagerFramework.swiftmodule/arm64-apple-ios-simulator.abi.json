@@ -95,120 +95,6 @@
           },
           {
             "kind": "Var",
-            "name": "invalidResponse",
-            "printedName": "invalidResponse",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(DemoNetworkManagerFramework.NetworkError.Type) -> (Swift.Int) -> DemoNetworkManagerFramework.NetworkError",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.Int) -> DemoNetworkManagerFramework.NetworkError",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NetworkError",
-                        "printedName": "DemoNetworkManagerFramework.NetworkError",
-                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(statusCode: Swift.Int)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int",
-                            "printedName": "Swift.Int",
-                            "usr": "s:Si"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "DemoNetworkManagerFramework.NetworkError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NetworkError",
-                        "printedName": "DemoNetworkManagerFramework.NetworkError",
-                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:27DemoNetworkManagerFramework0B5ErrorO15invalidResponseyACSi_tcACmF",
-            "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO15invalidResponseyACSi_tcACmF",
-            "moduleName": "DemoNetworkManagerFramework"
-          },
-          {
-            "kind": "Var",
-            "name": "decodingError",
-            "printedName": "decodingError",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(DemoNetworkManagerFramework.NetworkError.Type) -> (any Swift.Error) -> DemoNetworkManagerFramework.NetworkError",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(any Swift.Error) -> DemoNetworkManagerFramework.NetworkError",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NetworkError",
-                        "printedName": "DemoNetworkManagerFramework.NetworkError",
-                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(error: any Swift.Error)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "DemoNetworkManagerFramework.NetworkError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NetworkError",
-                        "printedName": "DemoNetworkManagerFramework.NetworkError",
-                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:27DemoNetworkManagerFramework0B5ErrorO08decodingE0yACs0E0_p_tcACmF",
-            "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO08decodingE0yACs0E0_p_tcACmF",
-            "moduleName": "DemoNetworkManagerFramework"
-          },
-          {
-            "kind": "Var",
             "name": "networkError",
             "printedName": "networkError",
             "children": [
@@ -263,6 +149,66 @@
             "usr": "s:27DemoNetworkManagerFramework0B5ErrorO07networkE0yACs0E0_p_tcACmF",
             "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO07networkE0yACs0E0_p_tcACmF",
             "moduleName": "DemoNetworkManagerFramework"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidResponse",
+            "printedName": "invalidResponse",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DemoNetworkManagerFramework.NetworkError.Type) -> (Swift.Int) -> DemoNetworkManagerFramework.NetworkError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Int) -> DemoNetworkManagerFramework.NetworkError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "DemoNetworkManagerFramework.NetworkError",
+                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(statusCode: Swift.Int)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "DemoNetworkManagerFramework.NetworkError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "DemoNetworkManagerFramework.NetworkError",
+                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:27DemoNetworkManagerFramework0B5ErrorO15invalidResponseyACSi_tcACmF",
+            "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO15invalidResponseyACSi_tcACmF",
+            "moduleName": "DemoNetworkManagerFramework",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -380,6 +326,63 @@
           },
           {
             "kind": "Var",
+            "name": "decodingError",
+            "printedName": "decodingError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DemoNetworkManagerFramework.NetworkError.Type) -> (any Swift.Error) -> DemoNetworkManagerFramework.NetworkError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> DemoNetworkManagerFramework.NetworkError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "DemoNetworkManagerFramework.NetworkError",
+                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(error: any Swift.Error)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "DemoNetworkManagerFramework.NetworkError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "DemoNetworkManagerFramework.NetworkError",
+                        "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:27DemoNetworkManagerFramework0B5ErrorO08decodingE0yACs0E0_p_tcACmF",
+            "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO08decodingE0yACs0E0_p_tcACmF",
+            "moduleName": "DemoNetworkManagerFramework"
+          },
+          {
+            "kind": "Var",
             "name": "unknownError",
             "printedName": "unknownError",
             "children": [
@@ -442,17 +445,26 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSvp",
-            "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSvp",
+            "usr": "s:27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSSgvp",
             "moduleName": "DemoNetworkManagerFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "accessors": [
               {
@@ -462,18 +474,60 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSvg",
-                "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSvg",
+                "usr": "s:27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO16errorDescriptionSSSgvg",
                 "moduleName": "DemoNetworkManagerFramework",
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkError",
+                "printedName": "DemoNetworkManagerFramework.NetworkError",
+                "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkError",
+                "printedName": "DemoNetworkManagerFramework.NetworkError",
+                "usr": "s:27DemoNetworkManagerFramework0B5ErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27DemoNetworkManagerFramework0B5ErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s27DemoNetworkManagerFramework0B5ErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "DemoNetworkManagerFramework",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -484,6 +538,164 @@
           "AccessControl",
           "RawDocComment"
         ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AppError",
+        "printedName": "AppError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "generic",
+            "printedName": "generic",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DemoNetworkManagerFramework.AppError.Type) -> (Swift.String) -> DemoNetworkManagerFramework.AppError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> DemoNetworkManagerFramework.AppError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppError",
+                        "printedName": "DemoNetworkManagerFramework.AppError",
+                        "usr": "s:27DemoNetworkManagerFramework8AppErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "DemoNetworkManagerFramework.AppError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppError",
+                        "printedName": "DemoNetworkManagerFramework.AppError",
+                        "usr": "s:27DemoNetworkManagerFramework8AppErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:27DemoNetworkManagerFramework8AppErrorO7genericyACSScACmF",
+            "mangledName": "$s27DemoNetworkManagerFramework8AppErrorO7genericyACSScACmF",
+            "moduleName": "DemoNetworkManagerFramework",
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "custom",
+            "printedName": "custom",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DemoNetworkManagerFramework.AppError.Type) -> (any Swift.Error) -> DemoNetworkManagerFramework.AppError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> DemoNetworkManagerFramework.AppError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppError",
+                        "printedName": "DemoNetworkManagerFramework.AppError",
+                        "usr": "s:27DemoNetworkManagerFramework8AppErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "DemoNetworkManagerFramework.AppError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppError",
+                        "printedName": "DemoNetworkManagerFramework.AppError",
+                        "usr": "s:27DemoNetworkManagerFramework8AppErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:27DemoNetworkManagerFramework8AppErrorO6customyACs0F0_pcACmF",
+            "mangledName": "$s27DemoNetworkManagerFramework8AppErrorO6customyACs0F0_pcACmF",
+            "moduleName": "DemoNetworkManagerFramework",
+            "fixedbinaryorder": 1
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:27DemoNetworkManagerFramework8AppErrorO",
+        "mangledName": "$s27DemoNetworkManagerFramework8AppErrorO",
+        "moduleName": "DemoNetworkManagerFramework",
+        "isEnumExhaustive": true,
         "conformances": [
           {
             "kind": "Conformance",
@@ -567,8 +779,8 @@
           },
           {
             "kind": "Function",
-            "name": "fetchData",
-            "printedName": "fetchData(endpoint:responseType:)",
+            "name": "requestAsync",
+            "printedName": "requestAsync(endpoint:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -580,37 +792,27 @@
                 "name": "Endpoint",
                 "printedName": "any DemoNetworkManagerFramework.Endpoint",
                 "usr": "s:27DemoNetworkManagerFramework8EndpointP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Metatype",
-                "printedName": "τ_0_0.Type",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_0_0"
-                  }
-                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:27DemoNetworkManagerFramework0bC0C9fetchData8endpoint12responseTypexAA8Endpoint_p_xmtYaKSeRzlF",
-            "mangledName": "$s27DemoNetworkManagerFramework0bC0C9fetchData8endpoint12responseTypexAA8Endpoint_p_xmtYaKSeRzlF",
+            "usr": "s:27DemoNetworkManagerFramework0bC0C12requestAsync8endpointxAA8Endpoint_p_tYaKSeRzlF",
+            "mangledName": "$s27DemoNetworkManagerFramework0bC0C12requestAsync8endpointxAA8Endpoint_p_tYaKSeRzlF",
             "moduleName": "DemoNetworkManagerFramework",
             "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
             "sugared_genericSig": "<T where T : Swift.Decodable>",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
+            "isFromExtension": true,
             "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "fetchData",
-            "printedName": "fetchData(endpoint:responseType:completion:)",
+            "name": "requestCallback",
+            "printedName": "requestCallback(endpoint:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -622,18 +824,6 @@
                 "name": "Endpoint",
                 "printedName": "any DemoNetworkManagerFramework.Endpoint",
                 "usr": "s:27DemoNetworkManagerFramework8EndpointP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Metatype",
-                "printedName": "τ_0_0.Type",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_0_0"
-                  }
-                ]
               },
               {
                 "kind": "TypeFunc",
@@ -668,21 +858,23 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:27DemoNetworkManagerFramework0bC0C9fetchData8endpoint12responseType10completionyAA8Endpoint_p_xmys6ResultOyxs5Error_pGctSeRzlF",
-            "mangledName": "$s27DemoNetworkManagerFramework0bC0C9fetchData8endpoint12responseType10completionyAA8Endpoint_p_xmys6ResultOyxs5Error_pGctSeRzlF",
+            "usr": "s:27DemoNetworkManagerFramework0bC0C15requestCallback8endpoint10completionyAA8Endpoint_p_ys6ResultOyxs5Error_pGctSeRzlF",
+            "mangledName": "$s27DemoNetworkManagerFramework0bC0C15requestCallback8endpoint10completionyAA8Endpoint_p_ys6ResultOyxs5Error_pGctSeRzlF",
             "moduleName": "DemoNetworkManagerFramework",
             "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
             "sugared_genericSig": "<T where T : Swift.Decodable>",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "fetchData",
-            "printedName": "fetchData(endpoint:responseType:)",
+            "name": "requestPublisher",
+            "printedName": "requestPublisher(endpoint:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -708,30 +900,20 @@
                 "name": "Endpoint",
                 "printedName": "any DemoNetworkManagerFramework.Endpoint",
                 "usr": "s:27DemoNetworkManagerFramework8EndpointP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Metatype",
-                "printedName": "τ_0_0.Type",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_0_0"
-                  }
-                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:27DemoNetworkManagerFramework0bC0C9fetchData8endpoint12responseType7Combine12AnyPublisherVyxs5Error_pGAA8Endpoint_p_xmtSeRzlF",
-            "mangledName": "$s27DemoNetworkManagerFramework0bC0C9fetchData8endpoint12responseType7Combine12AnyPublisherVyxs5Error_pGAA8Endpoint_p_xmtSeRzlF",
+            "usr": "s:27DemoNetworkManagerFramework0bC0C16requestPublisher8endpoint7Combine03AnyF0Vyxs5Error_pGAA8Endpoint_p_tSeRzlF",
+            "mangledName": "$s27DemoNetworkManagerFramework0bC0C16requestPublisher8endpoint7Combine03AnyF0Vyxs5Error_pGAA8Endpoint_p_tSeRzlF",
             "moduleName": "DemoNetworkManagerFramework",
             "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
             "sugared_genericSig": "<T where T : Swift.Decodable>",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -761,10 +943,10 @@
           },
           {
             "kind": "Conformance",
-            "name": "NetworkService",
-            "printedName": "NetworkService",
-            "usr": "s:27DemoNetworkManagerFramework0B7ServiceP",
-            "mangledName": "$s27DemoNetworkManagerFramework0B7ServiceP"
+            "name": "NetworkServiceProtocol",
+            "printedName": "NetworkServiceProtocol",
+            "usr": "s:27DemoNetworkManagerFramework0B15ServiceProtocolP",
+            "mangledName": "$s27DemoNetworkManagerFramework0B15ServiceProtocolP"
           }
         ]
       },
@@ -1206,92 +1388,6 @@
           },
           {
             "kind": "Var",
-            "name": "queryParameters",
-            "printedName": "queryParameters",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.String : Swift.String]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Swift.String]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:27DemoNetworkManagerFramework8EndpointP15queryParametersSDyS2SGSgvp",
-            "mangledName": "$s27DemoNetworkManagerFramework8EndpointP15queryParametersSDyS2SGSgvp",
-            "moduleName": "DemoNetworkManagerFramework",
-            "protocolReq": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[Swift.String : Swift.String]?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Dictionary",
-                        "printedName": "[Swift.String : Swift.String]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:SD"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:27DemoNetworkManagerFramework8EndpointP15queryParametersSDyS2SGSgvg",
-                "mangledName": "$s27DemoNetworkManagerFramework8EndpointP15queryParametersSDyS2SGSgvg",
-                "moduleName": "DemoNetworkManagerFramework",
-                "genericSig": "<τ_0_0 where τ_0_0 : DemoNetworkManagerFramework.Endpoint>",
-                "sugared_genericSig": "<Self where Self : DemoNetworkManagerFramework.Endpoint>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "headers",
             "printedName": "headers",
             "children": [
@@ -1375,6 +1471,144 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "queryItems",
+            "printedName": "queryItems",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Foundation.URLQueryItem]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.URLQueryItem]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URLQueryItem",
+                        "printedName": "Foundation.URLQueryItem",
+                        "usr": "s:10Foundation12URLQueryItemV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27DemoNetworkManagerFramework8EndpointP10queryItemsSay10Foundation12URLQueryItemVGSgvp",
+            "mangledName": "$s27DemoNetworkManagerFramework8EndpointP10queryItemsSay10Foundation12URLQueryItemVGSgvp",
+            "moduleName": "DemoNetworkManagerFramework",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Foundation.URLQueryItem]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Foundation.URLQueryItem]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "URLQueryItem",
+                            "printedName": "Foundation.URLQueryItem",
+                            "usr": "s:10Foundation12URLQueryItemV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27DemoNetworkManagerFramework8EndpointP10queryItemsSay10Foundation12URLQueryItemVGSgvg",
+                "mangledName": "$s27DemoNetworkManagerFramework8EndpointP10queryItemsSay10Foundation12URLQueryItemVGSgvg",
+                "moduleName": "DemoNetworkManagerFramework",
+                "genericSig": "<τ_0_0 where τ_0_0 : DemoNetworkManagerFramework.Endpoint>",
+                "sugared_genericSig": "<Self where Self : DemoNetworkManagerFramework.Endpoint>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "body",
+            "printedName": "body",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Data?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27DemoNetworkManagerFramework8EndpointP4body10Foundation4DataVSgvp",
+            "mangledName": "$s27DemoNetworkManagerFramework8EndpointP4body10Foundation4DataVSgvp",
+            "moduleName": "DemoNetworkManagerFramework",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Data?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27DemoNetworkManagerFramework8EndpointP4body10Foundation4DataVSgvg",
+                "mangledName": "$s27DemoNetworkManagerFramework8EndpointP4body10Foundation4DataVSgvg",
+                "moduleName": "DemoNetworkManagerFramework",
+                "genericSig": "<τ_0_0 where τ_0_0 : DemoNetworkManagerFramework.Endpoint>",
+                "sugared_genericSig": "<Self where Self : DemoNetworkManagerFramework.Endpoint>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Protocol",
@@ -1404,13 +1638,13 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "NetworkService",
-        "printedName": "NetworkService",
+        "name": "NetworkServiceProtocol",
+        "printedName": "NetworkServiceProtocol",
         "children": [
           {
             "kind": "Function",
-            "name": "fetchData",
-            "printedName": "fetchData(endpoint:responseType:)",
+            "name": "requestAsync",
+            "printedName": "requestAsync(endpoint:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1422,35 +1656,26 @@
                 "name": "Endpoint",
                 "printedName": "any DemoNetworkManagerFramework.Endpoint",
                 "usr": "s:27DemoNetworkManagerFramework8EndpointP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Metatype",
-                "printedName": "τ_1_0.Type",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_1_0"
-                  }
-                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:27DemoNetworkManagerFramework0B7ServiceP9fetchData8endpoint12responseTypeqd__AA8Endpoint_p_qd__mtYaKSeRd__lF",
-            "mangledName": "$s27DemoNetworkManagerFramework0B7ServiceP9fetchData8endpoint12responseTypeqd__AA8Endpoint_p_qd__mtYaKSeRd__lF",
+            "usr": "s:27DemoNetworkManagerFramework0B15ServiceProtocolP12requestAsync8endpointqd__AA8Endpoint_p_tYaKSeRd__lF",
+            "mangledName": "$s27DemoNetworkManagerFramework0B15ServiceProtocolP12requestAsync8endpointqd__AA8Endpoint_p_tYaKSeRd__lF",
             "moduleName": "DemoNetworkManagerFramework",
-            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : DemoNetworkManagerFramework.NetworkService, τ_1_0 : Swift.Decodable>",
-            "sugared_genericSig": "<Self, T where Self : DemoNetworkManagerFramework.NetworkService, T : Swift.Decodable>",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : DemoNetworkManagerFramework.NetworkServiceProtocol, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : DemoNetworkManagerFramework.NetworkServiceProtocol, T : Swift.Decodable>",
             "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "throwing": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "fetchData",
-            "printedName": "fetchData(endpoint:responseType:)",
+            "name": "requestPublisher",
+            "printedName": "requestPublisher(endpoint:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1476,34 +1701,25 @@
                 "name": "Endpoint",
                 "printedName": "any DemoNetworkManagerFramework.Endpoint",
                 "usr": "s:27DemoNetworkManagerFramework8EndpointP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Metatype",
-                "printedName": "τ_1_0.Type",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_1_0"
-                  }
-                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:27DemoNetworkManagerFramework0B7ServiceP9fetchData8endpoint12responseType7Combine12AnyPublisherVyqd__s5Error_pGAA8Endpoint_p_qd__mtSeRd__lF",
-            "mangledName": "$s27DemoNetworkManagerFramework0B7ServiceP9fetchData8endpoint12responseType7Combine12AnyPublisherVyqd__s5Error_pGAA8Endpoint_p_qd__mtSeRd__lF",
+            "usr": "s:27DemoNetworkManagerFramework0B15ServiceProtocolP16requestPublisher8endpoint7Combine03AnyH0Vyqd__s5Error_pGAA8Endpoint_p_tSeRd__lF",
+            "mangledName": "$s27DemoNetworkManagerFramework0B15ServiceProtocolP16requestPublisher8endpoint7Combine03AnyH0Vyqd__s5Error_pGAA8Endpoint_p_tSeRd__lF",
             "moduleName": "DemoNetworkManagerFramework",
-            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : DemoNetworkManagerFramework.NetworkService, τ_1_0 : Swift.Decodable>",
-            "sugared_genericSig": "<Self, T where Self : DemoNetworkManagerFramework.NetworkService, T : Swift.Decodable>",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : DemoNetworkManagerFramework.NetworkServiceProtocol, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : DemoNetworkManagerFramework.NetworkServiceProtocol, T : Swift.Decodable>",
             "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "fetchData",
-            "printedName": "fetchData(endpoint:responseType:completion:)",
+            "name": "requestCallback",
+            "printedName": "requestCallback(endpoint:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1515,18 +1731,6 @@
                 "name": "Endpoint",
                 "printedName": "any DemoNetworkManagerFramework.Endpoint",
                 "usr": "s:27DemoNetworkManagerFramework8EndpointP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Metatype",
-                "printedName": "τ_1_0.Type",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_1_0"
-                  }
-                ]
               },
               {
                 "kind": "TypeFunc",
@@ -1561,20 +1765,25 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:27DemoNetworkManagerFramework0B7ServiceP9fetchData8endpoint12responseType10completionyAA8Endpoint_p_qd__mys6ResultOyqd__s5Error_pGctSeRd__lF",
-            "mangledName": "$s27DemoNetworkManagerFramework0B7ServiceP9fetchData8endpoint12responseType10completionyAA8Endpoint_p_qd__mys6ResultOyqd__s5Error_pGctSeRd__lF",
+            "usr": "s:27DemoNetworkManagerFramework0B15ServiceProtocolP15requestCallback8endpoint10completionyAA8Endpoint_p_ys6ResultOyqd__s5Error_pGctSeRd__lF",
+            "mangledName": "$s27DemoNetworkManagerFramework0B15ServiceProtocolP15requestCallback8endpoint10completionyAA8Endpoint_p_ys6ResultOyqd__s5Error_pGctSeRd__lF",
             "moduleName": "DemoNetworkManagerFramework",
-            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : DemoNetworkManagerFramework.NetworkService, τ_1_0 : Swift.Decodable>",
-            "sugared_genericSig": "<Self, T where Self : DemoNetworkManagerFramework.NetworkService, T : Swift.Decodable>",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : DemoNetworkManagerFramework.NetworkServiceProtocol, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : DemoNetworkManagerFramework.NetworkServiceProtocol, T : Swift.Decodable>",
             "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
-        "usr": "s:27DemoNetworkManagerFramework0B7ServiceP",
-        "mangledName": "$s27DemoNetworkManagerFramework0B7ServiceP",
+        "usr": "s:27DemoNetworkManagerFramework0B15ServiceProtocolP",
+        "mangledName": "$s27DemoNetworkManagerFramework0B15ServiceProtocolP",
         "moduleName": "DemoNetworkManagerFramework",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
@@ -3851,28 +4060,28 @@
     {
       "filePath": "\/Users\/haonguyen\/Git\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/NetworkProtocols.swift",
       "kind": "StringLiteral",
-      "offset": 210,
+      "offset": 211,
       "length": 5,
       "value": "\"GET\""
     },
     {
       "filePath": "\/Users\/haonguyen\/Git\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/NetworkProtocols.swift",
       "kind": "StringLiteral",
-      "offset": 232,
+      "offset": 233,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/haonguyen\/Git\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/NetworkProtocols.swift",
       "kind": "StringLiteral",
-      "offset": 254,
+      "offset": 255,
       "length": 5,
       "value": "\"PUT\""
     },
     {
       "filePath": "\/Users\/haonguyen\/Git\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/DemoNetworkManagerFramework\/NetworkProtocols.swift",
       "kind": "StringLiteral",
-      "offset": 278,
+      "offset": 279,
       "length": 8,
       "value": "\"DELETE\""
     },

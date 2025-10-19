@@ -10,31 +10,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MiKNIQc074RxDgaabYCnp3KQKk4=
+		4xYrgDGG3hw/5nywvNHk8sG8emg=
 		</data>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		KCLOzMfYgnfKmEEAm1k2DZyxMQU=
+		3oq5FZbwCJO+Eend+ku+2Q9oagI=
 		</data>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		LIVoRNEiDAjvN7fsudmNBvpi0Cw=
+		D++d2ArAY/lp6KO20UpiT6g4nT8=
 		</data>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		ENFjAo1ENgD9aRmpK03Rmf+M/EE=
+		FCaHUePE/G2lUsC47v8oL1yRGXE=
 		</data>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		wAzRLPX7WBAtF0WQOmuaGw7va6A=
+		uRNjg5WVCa8qJFaHwb7fcIcEhww=
 		</data>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ENFjAo1ENgD9aRmpK03Rmf+M/EE=
+		FCaHUePE/G2lUsC47v8oL1yRGXE=
 		</data>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qMTwysKjLB/9gfe5m5Jt3MXhd7E=
+		Q23YRfkWEowJ32x6JqS5TCDFSxA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,42 +54,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1KAay8dft8m/2dcuYjN9Zp2J7UtEF33LMo5D6FbkK9g=
+			TuXCBIaMLwM4cOQd57KZDRbE3P6MoMvfMnNpq2DEF8s=
 			</data>
 		</dict>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yMluqqT7OVP8BolZK/eGTSYrCK3qTSFnG3B1acnK0Z4=
+			XD6a4FxOtlReV5nXMjETY6J+KO9NkUNe4Mm29zzloPI=
 			</data>
 		</dict>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r5AcVPJHzyCVomSdzxjdAL8AMwFrzua2tQeqaB1bN/0=
+			JlA+xo0/wbGoV7+Aru0MPFyLyYgC2pMxDmvkTstS7k8=
 			</data>
 		</dict>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			apAmUjRiotYD47QF+7JqNg2lbE1mXRdIwlgdG4Ri9XU=
+			JS4voGPTP0CbLSuqtdxFmD4hKgXHi7wVXEWpwJqeqw8=
 			</data>
 		</dict>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r5AcVPJHzyCVomSdzxjdAL8AMwFrzua2tQeqaB1bN/0=
+			JlA+xo0/wbGoV7+Aru0MPFyLyYgC2pMxDmvkTstS7k8=
 			</data>
 		</dict>
 		<key>Modules/DemoNetworkManagerFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cvIdpOJjTk5A+tHoHFQyPZaPnaUjz4qp9uMBaP5ULkU=
+			78kAxvmlB+Ng+abyX6kPS0ZikqOyiv11NUtpB2LCx6E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
