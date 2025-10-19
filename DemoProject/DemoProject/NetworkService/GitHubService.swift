@@ -9,7 +9,7 @@ import DemoNetworkManagerFramework
 import Combine
 
 // MARK: - GitHubServiceProtocol
-protocol GitHubServiceProtocol {
+protocol GithubServiceProtocol {
     func fetchUsers(perPage: Int, since: Int) async throws -> [User]
     func fetchUserDetail(by username: String) async throws -> UserDetail
     
@@ -18,30 +18,30 @@ protocol GitHubServiceProtocol {
 }
 
 // MARK: - GitHubNetworkService
-class GitHubNetworkService: GitHubServiceProtocol {
-    private let networkManager: NetworkService
+class GitHubNetworkService: GithubServiceProtocol {
+    private let networkManager: NetworkServiceProtocol
     
-    init(networkManager: NetworkService = NetworkManager()) {
+    init(networkManager: NetworkServiceProtocol = NetworkManager()) {
         self.networkManager = networkManager
     }
     
     func fetchUsers(perPage: Int, since: Int) async throws -> [User] {
-        let endpoint = GitHubAPIEndpoint.getUsersEndpoint(perPage: perPage, since: since)
-        return try await networkManager.fetchData(endpoint: endpoint, responseType: [User].self)
+        let endpoint = GithubAPIEndpoint.getUsersEndpoint(perPage: perPage, since: since)
+        return try await networkManager.requestAsync(endpoint: endpoint)
     }
     
     func fetchUserDetail(by username: String) async throws -> UserDetail {
-        let endpoint = GitHubAPIEndpoint.getUserDetailEndpoint(username: username)
-        return try await networkManager.fetchData(endpoint: endpoint, responseType: UserDetail.self)
+        let endpoint = GithubAPIEndpoint.getUserDetailEndpoint(username: username)
+        return try await networkManager.requestAsync(endpoint: endpoint)
     }
     
     func fetchUsersWithCombine(perPage: Int, since: Int) -> AnyPublisher<[User], Error> {
-        let endpoint = GitHubAPIEndpoint.getUsersEndpoint(perPage: perPage, since: since)
-        return networkManager.fetchData(endpoint: endpoint, responseType: [User].self)
+        let endpoint = GithubAPIEndpoint.getUsersEndpoint(perPage: perPage, since: since)
+        return networkManager.requestPublisher(endpoint: endpoint)
     }
     
     func fetchUserWithResult(perPage: Int, since: Int, completion: @escaping (Result<[User], Error>) -> Void) {
-        let endpoint = GitHubAPIEndpoint.getUsersEndpoint(perPage: perPage, since: since)
-        return networkManager.fetchData(endpoint: endpoint, responseType: [User].self, completion: completion)
+        let endpoint = GithubAPIEndpoint.getUsersEndpoint(perPage: perPage, since: since)
+        return networkManager.requestCallback(endpoint: endpoint, completion: completion)
     }
 }

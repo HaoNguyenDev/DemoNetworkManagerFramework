@@ -11,7 +11,7 @@ import SwiftUI
 struct DemoProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            GitHubUserListView()
+            GithubUserListView()
         }
     }
 }

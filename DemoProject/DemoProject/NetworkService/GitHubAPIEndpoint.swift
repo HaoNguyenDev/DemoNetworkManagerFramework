@@ -6,28 +6,62 @@
 //
 
 import DemoNetworkManagerFramework
+import Foundation
 
-// MARK: - Define GitHubAPIEndpoint
-struct GitHubAPIEndpoint: Endpoint {
+// MARK: - GithubAPIEndpoint Implementation
+struct GithubAPIEndpoint: Endpoint {
     var baseURL: String = "https://api.github.com"
     var path: String
     var method: HTTPMethod
-    var queryParameters: [String : String]?
     var headers: [String : String]?
+    var queryItems: [URLQueryItem]?
+    var body: Data?
     
-    static func getUsersEndpoint(perPage: Int, since: Int) -> GitHubAPIEndpoint {
-        return GitHubAPIEndpoint(path: "/users",
-                                method: .get,
-                                queryParameters: ["per_page": String(perPage), "since": String(since)],
-                                headers: ["Content-Type": "application/json;charset=utf-8"])
+    init(path: String, method: HTTPMethod, headers: [String: String]? = nil, queryItems: [URLQueryItem]? = nil, body: Data? = nil) {
+        self.path = path
+        self.method = method
+        self.headers = headers
+        self.queryItems = queryItems
+        self.body = body
     }
     
-    static func getUserDetailEndpoint(username: String) -> GitHubAPIEndpoint {
-        return GitHubAPIEndpoint(
+    // MARK: - Factory Methods
+    static func getUsersEndpoint(perPage: Int, since: Int) -> GithubAPIEndpoint {
+        let queries = [
+            URLQueryItem(name: "per_page", value: String(perPage)),
+            URLQueryItem(name: "since", value: String(since))
+        ]
+        
+        return GithubAPIEndpoint(
+            path: "/users",
+            method: .get,
+            headers: ["Content-Type": "application/json"],
+            queryItems: queries
+        )
+    }
+    
+    static func getUserDetailEndpoint(username: String) -> GithubAPIEndpoint {
+        return GithubAPIEndpoint(
             path: "/users/\(username)",
             method: .get,
-            queryParameters: nil,
-            headers: ["Content-Type": "application/json;charset=utf-8"]
+            headers: ["Content-Type": "application/json"]
+            // queryItems and body are nil (default)
+        )
+    }
+    
+    /// Example for post http method api
+    static func createGist(jsonBody: [String: Any]) -> GithubAPIEndpoint? {
+        guard let data = try? JSONSerialization.data(withJSONObject: jsonBody, options: []) else {
+            return nil
+        }
+        return GithubAPIEndpoint(
+            path: "/gists",
+            method: .post,
+            headers: [
+                "Content-Type": "application/json",
+                "Authorization": "token YOUR_ACCESS_TOKEN" // POST thường cần Authorization
+            ],
+            body: data
         )
     }
 }
