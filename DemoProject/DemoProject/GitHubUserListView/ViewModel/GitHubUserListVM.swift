@@ -30,12 +30,12 @@ class GitHubUserListVM: ObservableObject, GitHubUserListVMProtocol {
     @Published var users: [User] = []
     @Published var isLoading: Bool = false
     @Published var error: Error?
-    private let networkService: GitHubServiceProtocol
+    private let networkService: GithubServiceProtocol
     private var paginationConfig: PaginationConfig
     
     private var cancellables: Set<AnyCancellable> = []
     
-    init(networkService: GitHubServiceProtocol = GitHubNetworkService(),
+    init(networkService: GithubServiceProtocol = GitHubNetworkService(),
          paginationConfig: PaginationConfig = PaginationConfig(perPage: 20, since: 0)) {
         self.networkService = networkService
         self.paginationConfig = paginationConfig

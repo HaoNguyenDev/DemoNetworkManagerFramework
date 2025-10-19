@@ -1,5 +1,5 @@
 //
-//  GitHubUserListView.swift
+//  GithubUserListView.swift
 //  DemoProject
 //
 //  Created by Hao Nguyen on 2/5/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GitHubUserListView: View {
+struct GithubUserListView: View {
     @StateObject private var viewModel = GitHubUserListVM()
     @State private var showErrorAlert: Bool = false
     var body: some View {
@@ -40,5 +40,5 @@ struct GitHubUserListView: View {
 }
 
 #Preview {
-    GitHubUserListView()
+    GithubUserListView()
 }
